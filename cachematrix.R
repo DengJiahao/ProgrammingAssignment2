@@ -1,6 +1,5 @@
 ## This function creates a special "matrix" object that can cache its inverse.
 
-
 ## You need to input a matrix, and the function makeCacheMatrix
 ## returns a list of functions to help to set a inverse matrix.
 
@@ -8,22 +7,26 @@ makeCacheMatrix <- function(x = matrix()) {
   inv = NULL
   
   set = function(y) {
+    ###set() is used to set the matrix
     x <<- y
     inv <<- NULL
   }
   
   get = function() {
+    ###get() is used to get the matrix
     x
   }
   
   setinv = function(inverse) {
+    ###setinv() is used to set the inversion of the matrix
     inv <<- inverse 
   }
   
   getinv = function() {
+    ###setinv() is used to get the inversion of the matrix
     inv
   }
-  
+  ###return is followed
   list(set=set, get=get, setinv=setinv, getinv=getinv)
   
 }
